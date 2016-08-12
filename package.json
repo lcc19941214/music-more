@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server",
+    "dev": "NODE_ENV=development webpack-dev-server --inline --hot",
     "build": "NODE_ENV=production gulp start"
   },
   "author": "liuchengchuan",

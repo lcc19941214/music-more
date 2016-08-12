@@ -15,7 +15,7 @@ var isDebug = (process.env.NODE_ENV === 'development');
 console.log('isDebug: ', isDebug);
 
 // publicpath
-var publicPath = isDebug ? 'http://127.0.0.1:3000/' : '/static/';
+var publicPath = isDebug ? 'http://127.0.0.1:3000/static/' : '/static/';
 
 // entry
 var entry = {
@@ -102,7 +102,7 @@ module.exports = {
     color: true,
     port: 3000,
     host: '127.0.0.1',  // 10.6.131.79
-    contentBase: './dev'
+    contentBase: './static/'
   },
 
   output: {
