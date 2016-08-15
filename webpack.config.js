@@ -21,7 +21,8 @@ var publicPath = isDebug ? 'http://127.0.0.1:3000/static/' : '/static/';
 var entry = {
   index: path.resolve(APP_PATH, 'index.js'),
   vendors: [
-    'vue', 'vue-router', 'vue-resource'
+    'vue', 'vue-router', 'vue-resource',
+    path.resolve(CSS_PATH, 'normalize.css')
   ]
 };
 
@@ -35,7 +36,8 @@ var templates = [{
 
 // resource alias
 var alias = {
-  'less': path.resolve(DEV_PATH, 'less')
+  'less': path.resolve(DEV_PATH, 'less'),
+  'api': path.resolve(DEV_PATH, 'app', 'api')
 };
 
 // plugins
@@ -148,11 +150,13 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('vue-style-loader', 'style-loader!css-loader!less-loader')
+        // loader: ExtractTextPlugin.extract('vue-style-loader', 'style-loader!css-loader!less-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!less-loader')
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('vue-style-loader', 'style-loader!css-loader')
+        // loader: ExtractTextPlugin.extract('vue-style-loader', 'style-loader!css-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
       },
       {
         test: /\.(html|xml)$/,
@@ -182,6 +186,11 @@ module.exports = {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&mimetype=image/svg+xml&name=fonts/[name].[ext]'
       }
-    ]
+    ],
+    postcss: function () {
+      return {
+        defaults: [require('autoprefixer'), require('precess')]
+      }
+    }
   }
 }

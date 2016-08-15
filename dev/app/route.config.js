@@ -11,6 +11,6 @@ export function configRouter (router) {
   });
 
   router.redirect({
-    '*': '/about'
+    '*': '/index'
   });
 }

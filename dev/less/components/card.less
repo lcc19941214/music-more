@@ -1,0 +1,20 @@
+.m-card {
+  @radius: 6px;
+  .layout {
+    padding: .14rem .3rem;
+  }
+  border-radius: @radius;
+  min-width: 2.9rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(30, 30, 30, .1), 0 4px 6px rgba(50, 50, 50, .15);
+
+  .u-card-header-wrapper {
+    .layout;
+    border-radius: @radius @radius 0 0;
+  }
+
+  .u-card-body-wrapper {
+    .layout;
+    border-radius: 0 0 @radius @radius;
+  }
+}

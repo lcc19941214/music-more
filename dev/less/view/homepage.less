@@ -1,0 +1,124 @@
+body {
+  overflow-x: hidden;
+  min-width: 1260px;
+  background-color: #f6f6f6;
+}
+
+.g-header {
+  height: 2.4rem;
+  background-color: @primary-color;
+  .g-title-wrapper {
+    text-align: center;
+    h2 {
+      position: relative;
+      top: .25rem;
+      padding: .25rem 0;
+      font-size: .48rem;
+      font-weight: 400;
+      color: #fff;
+    }
+  }
+  .g-search-bar-wrapper {
+    width: 50%;
+    margin: .3rem auto 0;
+  }
+}
+
+.g-content {
+  .g-list-group-wrapper {
+    padding: .4rem 1rem;
+  }
+  .list-group {
+    .list-item-wrapper {
+      .list-item {
+        float: left;
+        width: 30%;
+        margin: 0 (10% / 6);
+        .header {
+          display: flex;
+          align-items: center;
+          h3{
+            margin-left: .1rem;
+            color: @headline-color;
+          }
+          .logo-wrapper {
+            border-radius: .04rem;
+            overflow: hidden;
+            img {
+              width: .3rem;
+              height: auto;
+            }
+          }
+        }
+
+        .card-body {
+          min-height: 3.6rem;
+        }
+        .song-list {
+          color: @content-color;
+          .song-item {
+            .song-name-label,
+            .song-singer-label {
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+            }
+            .song-name-label {
+              width: 60%;
+            }
+            .song-singer-label {
+              width: 30%;
+              text-align: right;
+              color: @sub-content-color;
+            }
+            a {
+              transition: .25s ease;
+              &:hover {
+                color: @primary-color;
+              }
+            }
+          }
+          li {
+            padding: .06rem 0;
+          }
+        }
+      }
+
+      .m-netease {
+        .song-list-slide-wrapper {
+          overflow: hidden;
+          .song-list-slide {
+            width: 300%;
+            transition: .4s ease-out;
+            .song-list {
+              float: left;
+              width: 100% / 3;
+            }
+          }
+          .song-list-slide-buttons {
+            padding: .1rem;
+            text-align: center;
+            cursor: default;
+            .slide-btn {
+              display: inline-block;
+              margin: 0 .05rem;
+              width: .06rem;
+              height: .06rem;
+              background-color: transparent;
+              border: 1px solid @primary-color;
+              border-radius: 50%;
+              cursor: pointer;
+              &.current {
+                background-color: @primary-color;
+                border-color: transparent;
+              }
+            }
+          }
+        }
+      }
+      .m-xiami {
+
+      }
+    }
+  }
+}
