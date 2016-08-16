@@ -9,7 +9,7 @@ var DEV_PATH = path.resolve(ROOT_PATH, 'dev');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'static');
 var APP_PATH = path.resolve(DEV_PATH, 'app');
 var CSS_PATH = path.resolve(DEV_PATH, 'css');
-var TEMP_PATH = path.join(DEV_PATH, 'templates');
+var TEMP_PATH = path.join('./dev/templates');
 
 var isDebug = (process.env.NODE_ENV === 'development');
 console.log('isDebug: ', isDebug);
@@ -28,10 +28,10 @@ var entry = {
 
 // templates
 var templates = [{
-  title: 'music lisst',
+  title: 'music list',
   chunks: ['vendors', 'index'],
   template: path.join(TEMP_PATH, 'index.html'),
-  filename: isDebug ? './index.html' : path.resolve(BUILD_PATH, 'index.html') 
+  filename: path.resolve(BUILD_PATH, 'index.html')
 }];
 
 // resource alias
@@ -74,10 +74,10 @@ if (!isDebug) {
 };
 
 templates.forEach(html => {
-  var { templates, filename, chunks } = html;
+  var { template, filename, chunks } = html;
   var params = {
     chunks,
-    templates: '!raw!./${template}',
+    template: `!raw!./${template}`,
     filename,
     inject: true,
     minify: {
