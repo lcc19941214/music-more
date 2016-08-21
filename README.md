@@ -5,4 +5,4 @@
 
 - [点击查看服务端代码](https://github.com/lcc19941214/music_more_backend)
 
-![index-preview](./about/music-more-index-png)
+![index-preview](./about/music-more-index.png)
