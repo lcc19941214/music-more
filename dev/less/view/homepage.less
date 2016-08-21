@@ -1,7 +1,12 @@
 body {
-  overflow-x: hidden;
-  min-width: 1260px;
+  min-width: 12.6rem;
   background-color: #f6f6f6;
+  @media (min-device-width: 200px) and (max-device-width: 736px) {
+    & {
+      min-width: 320px;
+      overflow-x: hidden;
+    }
+  }
 }
 
 .g-header {
@@ -19,14 +24,41 @@ body {
     }
   }
   .g-search-bar-wrapper {
-    width: 50%;
     margin: .3rem auto 0;
+    width: 90%;
+    max-width: 6rem;
+  }
+  @media (min-device-width: 200px) and (max-device-width: 736px) {
+    & {
+      height: 1.4rem;
+      .g-title-wrapper {
+        h2 {
+          position: relative;
+          top: 0;
+          padding: .25rem 0 .1rem;
+          font-size: .32rem;
+        }
+      }
+      .g-search-bar-wrapper {
+        margin: .04rem auto 0;
+        max-width: 6rem;
+      }
+    }
   }
 }
 
 .g-content {
   .g-list-group-wrapper {
-    padding: .4rem 1rem;
+    margin: 0 auto;
+    padding: .4rem 0;
+    width: 80%;
+    max-width: 11.2rem;
+    @media (min-device-width: 320px) and (max-device-width: 736px) {
+      & {
+        width: 90%;
+        padding: .2rem 0;
+      }
+    }
   }
   .list-group {
     .list-item-wrapper {
@@ -34,6 +66,12 @@ body {
         float: left;
         width: 30%;
         margin: 0 (10% / 6);
+        @media (min-device-width: 320px) and (max-device-width: 736px) {
+          & {
+            width: 100%;
+            margin: 0 0 .2rem 0;
+          }
+        }
         .header {
           display: flex;
           align-items: center;

@@ -21,9 +21,7 @@
             </ul>
           </div>
           <div class="song-list-slide-buttons">
-            <i class="slide-btn current"></i>
-            <i class="slide-btn"></i>
-            <i class="slide-btn"></i>
+            <i v-for="n in listGroup.length" :class="['slide-btn', $index === 0 ? 'current' : '']"></i>
           </div>
         </div>
       </div>
